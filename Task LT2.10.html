@@ -4,149 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion E-commerce Product Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-       *{
-        box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
-       } 
-#flex-container{
-    display:flex;
-    padding:0px;
-    margin:0px;
-    width:100%;
-    height:100vh;
-}
-.left-content , .right-content{
-    flex:50%;
-}
-.left-content{
-    display:flex;
-    gap:5px;
-    height:100%;
-
-}
-.main-image{
-    flex:2;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-.main-image img{
-    width: auto;
-    max-width:100%;
-    height:100%;
-   object-fit: contain; /* Giữ phần đầu người mẫu ở ảnh chính */
-    display: block;
-}
-.sub-images{
-    flex:1;
-    display:flex;
-    flex-direction: column;
-    gap:5px;
-    height:100%;
-}
-.sub-images img{
-    object-fit: cover;
-     width:100%;
-     display:block;
-    
-     flex:1;
-     height:0;
-object-fit: cover; 
-   object-position: center center
-}
-.main-image,
-.sub-images{
-    height:100%;
-}
-.top-bar img{
-    width:25px;
-    height:25px
-}
-.right-content{
-    text-align: right;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30px;
-    align-items: flex-end;
-    position: relative;
-}
-.top-bar{
-    width:100%;
-    display:flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap:15px;
-    font-size:14px;
-    margin-bottom: 60px;
-        position: absolute;
-    top: 30px;
-    right: 30px;
-
-}
-.product-title{
-    font-size:32px;
-    font-weight:300;
-    margin-bottom: 10px;
-}
-.price{
-    font-size:22px;
-    margin-bottom: 30px;
-}
-.color{
-    font-size:14px;
-    color:#828282;
-     margin-bottom: 25px;
-
-}
-.description{
-    font-size:14px;
-    line-height: 18px;
-    margin-bottom: 25px;
-    max-width:400px;color:#666;
-}
-.size-box{
-     display:flex;
-    gap:3px;
-    margin-bottom:5px;
-}
-.size-box button{
-   width:42px;
-    height:42px;
-    font-size:14px;
-    padding:12px;
-    margin:3px;
-    border:1px solid black;   
-}
-.size-guide{
-  font-size: 12px;
-  text-decoration: underline;
-  margin-bottom:30px;
-  color:#666;
-}
-.add-cart{
-    font-size:18px;
-    padding:22px 115px;
-    background:black;
-    color:white;
-    border:none;
-    margin-bottom:25px;
-}
-.bottom-link{
-    font-size:12px;
-    line-height:15px;
-    color:#666;
-}
-
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #ffffff;
+            color: #111;
+        }
+        #flex-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .left-content, .right-content {
+            flex: 50%;
+        }
+        .left-content {
+            display: flex;
+            gap: 6px;
+            height: 100%;
+            background-color: #fcfcfc;
+            padding: 6px;
+        }
+        .main-image {
+            flex: 2;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            overflow: hidden;
+        }
+        .main-image img {
+            width: auto;
+            max-width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            display: block;
+        }
+        .sub-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            height: 100%;
+        }
+        .sub-images img {
+            width: 100%;
+            display: block;
+            flex: 1;
+            height: 0;
+            object-fit: cover; 
+            object-position: center center;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .sub-images img:hover {
+            opacity: 0.85;
+        }
+        .right-content {
+            text-align: right;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
+            align-items: flex-end;
+            position: relative;
+        }
+        .top-bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            cursor: pointer;
+        }
+        .top-bar img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+        .product-title {
+            font-size: 30px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+        .color {
+            font-size: 13px;
+            color: #777;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 13px;
+            line-height: 20px;
+            margin-bottom: 25px;
+            max-width: 400px;
+            color: #666;
+        }
+        .size-box {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .size-box button {
+            width: 42px;
+            height: 42px;
+            font-size: 13px;
+            font-weight: 400;
+            margin: 3px;
+            border: 1px solid #d0d0d0;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .size-box button:hover {
+            border-color: black;
+            background-color: black;
+            color: white;
+        }
+        .size-guide {
+            font-size: 11px;
+            text-decoration: underline;
+            margin-bottom: 30px;
+            color: #666;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        .size-guide:hover {
+            color: black;
+        }
+        .add-cart {
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            padding: 18px 0;
+            width: 100%;
+            max-width: 380px;
+            background: rgb(30, 136, 3);
+            color: white;
+            border: 1px solid black;
+            margin-bottom: 25px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .add-cart:hover {
+            background: #333;
+        }
+        .bottom-link {
+            font-size: 11px;
+            line-height: 18px;
+            color: #666;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+        .bottom-link:hover {
+            color: black;
+        }
     </style>
 </head>
 <body>
     <div id="flex-container">
         <div class="left-content">
             <div class="main-image">
-                <img src="imagesLT2.10/image1.png">
+                <img src="imagesLT2.10/image1.png" alt="Main Product">
             </div>
             <div class="sub-images">
                 <img src="imagesLT2.10/image2.png" alt="">
@@ -154,36 +190,32 @@ object-fit: cover;
                 <img src="imagesLT2.10/image4.png" alt="">
                 <img src="imagesLT2.10/image5.png" alt="">
             </div>
-             </div>
+        </div>
         <div class="right-content">
             <div class="top-bar">
                 <span>BEGIN SESSION</span>
-                <img src="imagesLT2.10/Card.png"alt="">
+                <img src="imagesLT2.10/Card.png" alt="">
             </div>
             <h1 class="product-title">TRACKS BUTTONS</h1>
             <div class="price">$199,99</div>
             <div class="color">IVORY WHITE | 727/337</div>
             <p class="description">
-     We work with our suppliers, workers, unions and<br>
-international bodies to develop a supply chain where human<br>
- rights are promoted and respected, contributing to the<br>
- United Nations Sustainable Development Goals.
+                We work with our suppliers, workers, unions and international bodies to develop a supply chain where human rights are promoted and respected, contributing to the United Nations Sustainable Development Goals.
             </p>
             <div class="size-box">
                 <button>EP</button>
-                 <button>P</button>
+                <button>P</button>
                 <button>M</button>
                 <button>G</button>
                 <button>EG</button>
             </div>
             <div class="size-guide">SIZE GUIDE</div>
             <button class="add-cart">ADD TO BAG</button>
-
-        <div class="bottom-link">
-            ADD TO FAVORITES<br>
-            CALCULATE SHIPPING AND DELIVERY
+            <div class="bottom-link">
+                ADD TO FAVORITES<br>
+                CALCULATE SHIPPING AND DELIVERY
             </div>
-    </div>
+        </div>
     </div>
 </body>
-</html> 
+</html>
